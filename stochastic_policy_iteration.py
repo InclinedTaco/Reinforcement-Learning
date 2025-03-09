@@ -1,11 +1,9 @@
 import numpy as np
 
-
-# Define the states and actions
 states = [0, 1, 2, 3]
 actions = [0, 1]
 
-# Transition probabilities: state -> action -> (prob, next_state, reward)
+
 transition_prob = {
     0: {0: [(1.0, 0, 0)], 1: [(1.0, 1, 0)]},
     1: {0: [(1.0, 0, 0)], 1: [(1.0, 2, 0)]},
@@ -13,8 +11,8 @@ transition_prob = {
     3: {0: [(1.0, 2, 0)], 1: [(1.0, 3, 1)]},
 }
 
-gamma = 0.9  # Discount factor
-theta = 1e-6  # Convergence threshold
+gamma = 0.9
+theta = 1e-6  
 policy=np.zeros((len(states),len(actions)))/len(actions)
 
 V=np.zeros(len(states))
